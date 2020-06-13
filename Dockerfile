@@ -1,4 +1,5 @@
 FROM golang:alpine as builder
+ENV GO111MODULE=on
 COPY go.mod go.sum ./
 RUN go mod download
 COPY . .
