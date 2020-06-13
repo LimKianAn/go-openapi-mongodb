@@ -4,6 +4,9 @@ WORKDIR /app
 COPY go.mod go.sum ./
 RUN go mod download
 COPY . .
+ARG build_arg_mongodb_atlas_uri
+ENV MONGODB_ATLAS_URI=$build_arg_mongodb_atlas_uri
+ENV PORT 8080
 RUN go build -o app
 
 FROM alpine:latest
