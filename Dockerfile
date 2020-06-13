@@ -10,5 +10,5 @@ RUN go build -o app
 
 FROM alpine:latest
 COPY --from=builder /app/app .
-ENV PORT 80
+ENV PORT 8080
 CMD ["./app"]
