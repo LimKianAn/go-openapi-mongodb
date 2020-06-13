@@ -9,6 +9,6 @@ ENV MONGODB_ATLAS_URI=$build_arg_mongodb_atlas_uri
 RUN go build -o app
 
 FROM alpine:latest
-COPY --from=build /app/app .
+COPY --from=builder /app/app .
 ENV PORT 8081
 CMD ["./app"]
