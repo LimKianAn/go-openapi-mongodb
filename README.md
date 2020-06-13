@@ -5,16 +5,15 @@ docker image build https://github.com/LimKianAn/go-openapi-mongodb.git --build-a
 # Run
 docker container run -d -p 8081:8080 <image ID>
 
-# port 8081
-# GET
-curl http://<ip>:<port>/users/<id>
-
 # POST
-curl -X POST http://<ip>:<port>/users -H "Content-Type: application/json" -d '{"id":"9","email":"9@9","name":"nine"}'
+curl -X POST http://ec2-18-184-29-167.eu-central-1.compute.amazonaws.com:8081/users -H "Content-Type: application/json" -d '{"id":"9","email":"9@9","name":"nine"}'
 
-# PATCH
-curl -X PATCH http://<ip>:<port>/users/<id> -H "Content-Type: application/json" -d '{"email":"8@8","name":"eight"}'
+# GET. Notice <id> must be given.
+curl http://ec2-18-184-29-167.eu-central-1.compute.amazonaws.com/users/<id>
 
-# DELETE
-curl -X DELETE http://<ip>:<port>/users/<id>
+# PATCH. Notice <id> must be given.
+curl -X PATCH http://ec2-18-184-29-167.eu-central-1.compute.amazonaws.com:8081/users/<id> -H "Content-Type: application/json" -d '{"email":"8@8","name":"eight"}'
+
+# DELETE. Notice <id> must be given.
+curl -X DELETE http://ec2-18-184-29-167.eu-central-1.compute.amazonaws.com:8081/users/<id>
 ```
