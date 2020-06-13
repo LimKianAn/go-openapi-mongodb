@@ -5,7 +5,7 @@
 curl -X POST http://ec2-18-184-29-167.eu-central-1.compute.amazonaws.com:8081/users -H "Content-Type: application/json" -d '{"id":"9","email":"9@9","name":"nine"}'
 
 # GET. Notice <id> must be given.
-curl -X GET http://ec2-18-184-29-167.eu-central-1.compute.amazonaws.com:8081/users/9
+curl -X GET http://ec2-18-184-29-167.eu-central-1.compute.amazonaws.com:8081/users/<id>
 
 # PATCH. Notice <id> must be given.
 curl -X PATCH http://ec2-18-184-29-167.eu-central-1.compute.amazonaws.com:8081/users/<id> -H "Content-Type: application/json" -d '{"email":"8@8","name":"eight"}'
