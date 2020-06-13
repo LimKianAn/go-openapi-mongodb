@@ -1,6 +1,9 @@
 ```
-docker image build --build-arg build_arg_mongodb_atlas_uri=<your-mongodb-atlas-uri> -t limkianandocker/go-openapi-mongodb:1.0 .
-docker container run -d -p 8081:8080 limkianandocker/go-openapi-mongodb:1.0
+# Build
+docker image build https://github.com/LimKianAn/go-openapi-mongodb.git --build-arg build_arg_mongodb_atlas_uri=<your-mongodb-atlas-uri>
+
+# Run
+docker container run -d -p 8081:8080 <image ID>
 
 # port 8081
 # GET
