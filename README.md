@@ -1,6 +1,6 @@
 ### Try it out
 
-Notice <id> must be given.
+Notice \<id\> must be given.
   
 ```
 # POST
@@ -16,11 +16,16 @@ curl -X PATCH http://ec2-18-184-29-167.eu-central-1.compute.amazonaws.com:8081/u
 curl -X DELETE http://ec2-18-184-29-167.eu-central-1.compute.amazonaws.com:8081/users/<id>
 ```
 
-### Docker Build & run
-```
-# Notice <your-mongodb-atlas-uri> must be given.
-docker image build https://github.com/LimKianAn/go-openapi-mongodb.git --build-arg build_arg_mongodb_atlas_uri=<your-mongodb-atlas-uri>
+### Docker 
+#### Build
 
-# Noice <image-ID> must be given.
+Notice \<your-mongodb-atlas-uri\> must be given.
+```
+docker image build https://github.com/LimKianAn/go-openapi-mongodb.git --build-arg build_arg_mongodb_atlas_uri=<your-mongodb-atlas-uri>
+```
+
+#### Run
+Noice \<image-ID\> must be given.
+```
 docker container run -d -p 8081:8080 <image-ID>
 ```
